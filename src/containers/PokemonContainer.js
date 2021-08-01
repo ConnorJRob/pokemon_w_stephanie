@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PokemonList from '../components/PokemonList';
+import FavouritePokemon from '../components/FavouritePokemon';
+import ChosenPokemon from '../components/ChosenPokemon';
 
 const PokemonContainer = () => {
 
@@ -17,11 +19,11 @@ const PokemonContainer = () => {
         .catch(err => console.error);
     }
 
-    
-
     return(
         <div>
             <h2>This is the container for our pokemon app!</h2>
+            <FavouritePokemon/>
+            <ChosenPokemon />
             <PokemonList pokemon={pokemon}/>
         </div>
     )

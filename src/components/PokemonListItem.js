@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PokemonListItem = () => {
+const PokemonListItem = ({pokemon}) => {
     return(
-        <p>PokemonItem</p>  
+        <p>{pokemon.name}</p>  
     )
 };
 

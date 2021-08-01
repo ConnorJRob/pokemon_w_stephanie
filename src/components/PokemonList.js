@@ -12,7 +12,6 @@ const PokemonList = ({pokemon}) => {
 
     return(
         <>
-        <p>This is the list</p>
         <ul>
         {PokemonListItems}
         </ul>
