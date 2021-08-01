@@ -4,9 +4,6 @@ const FavouritePokemon = ({pokemon}) => {
 
 
     const favPokemon = pokemon.filter(pokemon => pokemon.favourite)
-    // const pickPokemon = FavouritePokemon.map((pokemon) =>{
-    //     return <option key={pokemon.name} value={pokemon.name}>{pokemon.name}</option>
-    // });
 
     return (
         <>
@@ -19,10 +16,6 @@ const FavouritePokemon = ({pokemon}) => {
                     </li>
                 )})}
         </ul>
-        {/* <select onChange={FavouritePokemon}>
-            <option selected disable>Favourite Pokemon</option>
-            {pickPokemon}
-            </select> */}
         </>
     )
 };

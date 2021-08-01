@@ -1,5 +1,4 @@
 import React from 'react';
-// import PokemonListItem from './PokemonListItem.js'
 
 const PokemonList = ({pokemon, onPokemonSelected}) => {
 
@@ -7,12 +6,6 @@ const PokemonList = ({pokemon, onPokemonSelected}) => {
         onPokemonSelected(event.target.value)
     }
 
-    // const PokemonListItems = pokemon.map((pokemon,index) => {
-    //     return(
-    //         <PokemonListItem pokemon={pokemon} key={index}/>
-    //     )
-
-    // });
 
     return(
         <>

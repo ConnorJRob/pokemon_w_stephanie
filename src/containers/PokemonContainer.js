@@ -7,8 +7,6 @@ const PokemonContainer = () => {
 
     const [pokemon, setPokemon] = useState([]);
     const [selectedPokemonIdName, setSelectedPokemonIdName] = useState('');
-    const [favouritePokemon, setFavouritePokemon] = useState([]);
-
     useEffect(() => {
         getPokemon();
     }, []);
@@ -20,17 +18,19 @@ const PokemonContainer = () => {
         .catch(err => console.error);
     };
 
-    // const onPokemonClick = (pokemon) => {
-    //     setSelectedPokemon(pokemon)
-    // };
-
     const handlePokemonSelected = (pokemonName) => {
         setSelectedPokemonIdName(pokemonName)
     };
     
-    const addToFavourites = (pokemon) => {
-        setFavouritePokemon([...favouritePokemon, pokemon])
-    }
+    const handleFavouriteToggle = (pokemonName) => {
+        const updatedPokemon = pokemon.map((pokemon) => {
+            if (pokemon.name === pokemonName) {
+                pokemon.favourite = !pokemon.favourite
+            }
+            return pokemon
+        })
+        setPokemon(updatedPokemon)
+    };
 
     const selectedPokemon = pokemon.find(pokemon => pokemon.name === selectedPokemonIdName);
     console.log(selectedPokemon)
@@ -38,8 +38,8 @@ const PokemonContainer = () => {
     return(
         <div>
             <h2>This is the container for our pokemon app!</h2>
-            <FavouritePokemon favouritePokemon={favouritePokemon} pokemon={pokemon}/>
-            <ChosenPokemon selectedPokemon={selectedPokemon} addToFavourites={addToFavourites}/>
+            <FavouritePokemon pokemon={pokemon}/>
+            <ChosenPokemon selectedPokemon={selectedPokemon} handleFavouriteToggle={handleFavouriteToggle}/>
             <PokemonSelector pokemon={pokemon} onPokemonSelected={handlePokemonSelected}/>
         </div>
     )
