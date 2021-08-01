@@ -1,8 +1,10 @@
 import React from 'react';
 
 const PokemonListItem = ({pokemon}) => {
+
     return(
-        <p>{pokemon.name}</p>  
+        <option value={pokemon}>{pokemon.name}</option>  
+        
     )
 };
 
